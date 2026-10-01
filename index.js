@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import fs from "fs";
+import chalk from "chalk";
 
 const program = new Command();
 
@@ -12,7 +13,7 @@ program
     .action((todo) => {
         fs.readFile(file, "utf-8", (err, content) => {
             if (err) {
-                console.log("Error while reading the todo from file")
+                console.log(chalk.red.bold("Error:") + " " + chalk.white("Unable to read the file"));
             }
             else {
                 let data = JSON.parse(content);
@@ -20,10 +21,10 @@ program
                 data = JSON.stringify(data);
                 fs.writeFile(file, data, (err) => {
                     if (err) {
-                        console.log("Error while storing the todo");
+                        console.log(chalk.red.bold("Error:") + " " + chalk.white("Unable to write the file"));
                     }
                     else {
-                        console.log("Todo added successfully");
+                        console.log(chalk.green("Todo added successfully"));
                     }
                 })
             }
@@ -38,13 +39,13 @@ program
     .action(() => {
         fs.readFile(file, "utf-8", (err, content) => {
             if (err) {
-                console.log("Error while reading the content from the file");
+                console.log(chalk.red.bold("Error:") + " " + chalk.white("Unable to read the file"));
             }
             else {
                 let data = JSON.parse(content);
                 let list = data.list;
                 for (let i = 0; i < list.length; i++) {
-                    console.log(i + 1 + ". " + list[i]);
+                    console.log(chalk.cyan(i + 1 + ". " + list[i]));
                 }
             }
         })
@@ -56,7 +57,7 @@ program
     .action((index) => {
         fs.readFile(file, "utf-8", (err, content) => {
             if (err) {
-                console.log("Error while reading the file content");
+                console.log(chalk.red.bold("Error:") + " " + chalk.white("Unable to read the file"));
             }
             else {
                 let data = JSON.parse(content);
@@ -64,10 +65,10 @@ program
                 data = JSON.stringify(data);
                 fs.writeFile(file, data, (err) => {
                     if (err) {
-                        console.log("Error while writing to the file");
+                        console.log(chalk.red.bold("Error:") + " " + chalk.white("Unable to write the file"));
                     }
                     else {
-                        console.log("Deleted the todo from the list successfully");
+                        console.log(chalk.yellow("Deleted the todo from the list successfully"));
                     }
                 })
             }
