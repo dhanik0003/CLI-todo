@@ -42,7 +42,7 @@ cd CLI-todo
 ### Install dependencies
 
 ```bash
-npm install
+npm i
 ```
 
 ---
@@ -52,7 +52,7 @@ npm install
 ### Add a Todo
 
 ```bash
-node index.js add "Learn Commander.js"
+node index.js add "Go to gym"
 ```
 
 Example Output
@@ -72,9 +72,9 @@ node index.js show
 Example Output
 
 ```text
-1. Learn Commander.js
-2. Build CLI Todo
-3. Push project to GitHub
+1. Go to gym
+2. Do laundry
+3. Buy groceries
 ```
 
 ---
@@ -105,17 +105,6 @@ CLI-todo/
 ├── .gitignore
 └── README.md
 ```
-
----
-
-## Future Improvements
-
-- Update/Edit existing todos
-- Mark todos as completed
-- Search todos
-- Clear all todos
-- Input validation
-- Better error handling
 
 ---
 
