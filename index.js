@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import fs from "fs";
+import fs from "fs/promises";
 import chalk from "chalk";
 
 const program = new Command();
@@ -50,7 +50,7 @@ program
             }
         })
     })
-
+//Delete the todo from the list
 program
     .command("delete <index>")
     .description("Delete the todo from the list")
