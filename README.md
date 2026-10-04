@@ -1,27 +1,29 @@
 # CLI Todo
 
-A simple Command Line Interface (CLI) Todo application built using **Node.js**, **Commander.js**, **File System (fs)**, and **Chalk**.
+A simple Command Line Interface (CLI) Todo application built using **Node.js**, **Commander.js**, **Chalk**, and the **Node.js File System**.
 
-This project allows you to manage your todos directly from the terminal by adding, viewing, and deleting tasks. Todos are stored locally in a JSON file.
+The application allows you to manage your todos directly from the terminal by adding, viewing, and deleting tasks. Todos are stored locally in a JSON file, making the application lightweight and easy to use.
 
 ---
 
 ## Features
 
-- ✅ Add new todos
-- 📋 View all todos
-- 🗑 Delete existing todos
-- 🎨 Colored terminal output using Chalk
-- 💾 Persistent storage using the Node.js File System
+* Add new todos
+* View all todos
+* Delete existing todos
+* Input validation for invalid or empty inputs
+* Colored terminal output using Chalk
+* Persistent local storage using the Node.js File System
+* Built using asynchronous file operations with `fs/promises`
 
 ---
 
 ## Technologies Used
 
-- Node.js
-- Commander.js
-- Chalk
-- File System (fs)
+* Node.js
+* Commander.js
+* Chalk
+* Node.js File System (`fs/promises`)
 
 ---
 
@@ -42,7 +44,7 @@ cd CLI-todo
 ### Install dependencies
 
 ```bash
-npm i
+npm install
 ```
 
 ---
@@ -88,7 +90,7 @@ node index.js delete 2
 Example Output
 
 ```text
-Deleted the todo from the list successfully
+Todo deleted successfully
 ```
 
 ---
@@ -106,6 +108,13 @@ CLI-todo/
 └── README.md
 ```
 
+* **index.js** - Main application file containing all CLI commands.
+* **a.txt** - Stores the todo list in JSON format.
+* **package.json** - Project metadata and dependencies.
+* **package-lock.json** - Dependency lock file.
+* **.gitignore** - Files ignored by Git.
+* **README.md** - Project documentation.
+
 ---
 
 ## Author
@@ -116,6 +125,6 @@ GitHub: https://github.com/dhanik0003
 
 ---
 
-# Screenshots
+## Screenshot
 
 ![CLI Todo Demo](Screenshots/snapshot.png)
